@@ -17,7 +17,8 @@
  */
 package de.spoeth.rar.ci;
 
-import de.spoeth.rar.common.AbstractReferencable;
+import javax.naming.Reference;
+import javax.resource.Referenceable;
 
 /**
  * This class serves as a skeletal class for
@@ -26,6 +27,18 @@ import de.spoeth.rar.common.AbstractReferencable;
  * @author Ralf Spöth
  * @version 1.0
  */
-public abstract class AbstractConnectionFactory 
-        extends AbstractReferencable 
-        implements ConnectionFactory {}
+public abstract class AbstractConnectionFactory implements ConnectionFactory, Referenceable {
+
+    protected Reference ref;
+    
+    @Override
+    public void setReference(Reference rfrnc) {
+        this.ref = rfrnc;
+    }
+
+    @Override
+    public Reference getReference() {
+        return ref;
+    }
+    
+}
