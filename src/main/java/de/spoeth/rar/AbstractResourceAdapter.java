@@ -74,7 +74,7 @@ public abstract class AbstractResourceAdapter implements ResourceAdapter, Serial
     
     
     /**
-     * Empty default implementation.
+     * Set {@link #context} to {@code null}.
      */
     @Override
     public void stop() {        

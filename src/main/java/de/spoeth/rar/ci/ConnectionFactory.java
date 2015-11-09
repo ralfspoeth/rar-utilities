@@ -21,7 +21,12 @@ import java.io.Serializable;
 import javax.resource.Referenceable;
 
 /**
+ * Implementing this interface ensures that non-CCI 
+ * connection implementations fulfill the general contracts
+ * for connection factories, which requires to implement
+ * both {@link Serializable} and {@link Referenceable}.
  *
- * @author SPR
+ * @author Ralf Spöth
+ * @version 1.0
  */
 public interface ConnectionFactory extends Serializable, Referenceable {}

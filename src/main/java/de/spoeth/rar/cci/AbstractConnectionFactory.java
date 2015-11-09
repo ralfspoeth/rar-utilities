@@ -17,8 +17,6 @@
  */
 package de.spoeth.rar.cci;
 
-import javax.naming.NamingException;
-import javax.naming.Reference;
 import javax.resource.NotSupportedException;
 import javax.resource.Referenceable;
 import javax.resource.ResourceException;

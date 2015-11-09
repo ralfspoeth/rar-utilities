@@ -20,8 +20,12 @@ package de.spoeth.rar.ci;
 import de.spoeth.rar.common.AbstractReferencable;
 
 /**
- *
- * @author SPR
+ * This class serves as a skeletal class for
+ * non-CCI connection factories.
+ * 
+ * @author Ralf Spöth
+ * @version 1.0
  */
-public abstract class AbstractConnectionFactory extends AbstractReferencable implements ConnectionFactory {
-}
+public abstract class AbstractConnectionFactory 
+        extends AbstractReferencable 
+        implements ConnectionFactory {}
