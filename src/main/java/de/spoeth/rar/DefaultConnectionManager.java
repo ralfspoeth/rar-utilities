@@ -31,9 +31,7 @@ import javax.security.auth.Subject;
  * This implementation of the {@link ConnectionManager} interface
  * simply does not provide any kind of resource pooling.
  * 
- * TODO: check whether or not this implementation is really 
- * required.
- * 
+ * The implementation is not strictly required by the JCA.
  * 
  * @author Ralf Spöth
  * @version 1.0
@@ -55,7 +53,7 @@ public class DefaultConnectionManager implements ConnectionManager {
      * @param mcf the factory instance, may not be {@code null}.
      * @param cxRequestInfo the request parameters
      * @return the managed connection returned by the factory with a {@code null} {@link Subject}
-     * @throws ResourceException 
+     * @throws ResourceException rethrows mcfs exceptions
      */
     @Override
     public Object allocateConnection(ManagedConnectionFactory mcf, ConnectionRequestInfo cxRequestInfo) throws ResourceException {

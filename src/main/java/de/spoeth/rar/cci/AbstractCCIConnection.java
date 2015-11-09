@@ -17,6 +17,7 @@
  */
 package de.spoeth.rar.cci;
 
+import de.spoeth.rar.ci.AbstractConnection;
 import java.io.Closeable;
 import javax.resource.cci.Connection;
 
@@ -28,8 +29,11 @@ import javax.resource.cci.Connection;
  * Implementing {@link Closeable} would have been sufficient; however, 
  * the {@link AutoCloseable} allows for try-with-resources idioms.
  * 
+ * The class builds upon the non-CCI version due to their generic
+ * similarity.
+ * 
  * @author Ralf Spöth
  * @version 1.0
  */
-public abstract class AbstractConnection extends de.spoeth.rar.ci.AbstractConnection implements Connection {
+public abstract class AbstractCCIConnection extends AbstractConnection implements Connection {
 }

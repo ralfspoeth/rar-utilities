@@ -25,9 +25,7 @@ import javax.resource.Referenceable;
  * for {@link Referenceable} types as specified or required
  * by the JCA specification.
  *
- * @TODO: is the really valuable?
- *
- * @author SPR
+ * @author Ralf Spöth
  * @version 1.0
  */
 public abstract class AbstractReferencable implements Referenceable {

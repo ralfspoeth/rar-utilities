@@ -63,12 +63,11 @@ public abstract class AbstractManagedConnectionFactory implements
     /**
      * Feature is not supported; throws a {@link NotSupportedException}.
      * 
-     * @param connectionSet
-     * @param subject
-     * @param cxRequestInfo
-     * @return
-     * @throws ResourceException 
-     * @throws NotSupportedException always
+     * @param connectionSet recent connections
+     * @param subject the security subject
+     * @param cxRequestInfo request information
+     * @return nothing; always throws an exception
+     * @throws NotSupportedException always; feature is not implemented
      */
     @Override
     public ManagedConnection matchManagedConnections(
@@ -80,9 +79,11 @@ public abstract class AbstractManagedConnectionFactory implements
     }
     
     /**
+     * Instantiate a new connection using the default connection manager
+     * shipped with this library; see {@link DefaultConnectionManager}.
      * 
-     * @return
-     * @throws ResourceException 
+     * @return a new connection
+     * @throws ResourceException see {@link #createConnectionFactory(javax.resource.spi.ConnectionManager)}
      */
     @Override
     public Object createConnectionFactory() throws ResourceException {
@@ -92,12 +93,12 @@ public abstract class AbstractManagedConnectionFactory implements
     protected PrintWriter logWriter;
     
     @Override
-    public void setLogWriter(PrintWriter out) throws ResourceException {
+    public void setLogWriter(PrintWriter out) {
         this.logWriter = out;
     }
 
     @Override
-    public PrintWriter getLogWriter() throws ResourceException {
+    public PrintWriter getLogWriter() {
         return logWriter;
     }
 

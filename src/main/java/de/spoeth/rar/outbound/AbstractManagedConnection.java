@@ -21,7 +21,6 @@ import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-import javax.resource.ResourceException;
 import javax.resource.spi.ConnectionEvent;
 import javax.resource.spi.ConnectionEventListener;
 import javax.resource.spi.ManagedConnection;
@@ -53,11 +52,10 @@ public abstract class AbstractManagedConnection implements ManagedConnection, Se
      * This method must be overridden such that the passed connection
      * is first disassociated from its current managed connection.
      * 
-     * @param connection
-     * @throws ResourceException 
+     * @param connection the connection
      */
     @Override
-    public void associateConnection(Object connection) throws ResourceException {
+    public void associateConnection(Object connection) {
         this.connection = connection;
     }
 
@@ -65,10 +63,9 @@ public abstract class AbstractManagedConnection implements ManagedConnection, Se
      * The default implementation just sets the reference to the 
      * connection handle to {@code null}.
      * 
-     * @throws ResourceException 
      */
     @Override
-    public void cleanup() throws ResourceException {
+    public void cleanup()  {
         this.connection = null;
     }
 
@@ -136,7 +133,7 @@ public abstract class AbstractManagedConnection implements ManagedConnection, Se
     }
 
     @Override
-    public void setLogWriter(PrintWriter out) throws ResourceException {
+    public void setLogWriter(PrintWriter out) {
         this.logWriter = out;
     }
 }

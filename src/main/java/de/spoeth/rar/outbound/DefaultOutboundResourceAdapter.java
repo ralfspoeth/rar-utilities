@@ -36,10 +36,9 @@ public class DefaultOutboundResourceAdapter extends AbstractResourceAdapter {
     /**
      * Not implemented for outbound resource adapters.
      *
-     * @param endpointFactory
-     * @param spec
-     * @throws javax.resource.ResourceException
-     * @throws UnsupportedOperationException always
+     * @param endpointFactory the endpoint factory
+     * @param spec the activation spec
+     * @throws javax.resource.NotSupportedException always
      */
     @Override
     public void endpointActivation(MessageEndpointFactory endpointFactory, ActivationSpec spec) throws ResourceException {

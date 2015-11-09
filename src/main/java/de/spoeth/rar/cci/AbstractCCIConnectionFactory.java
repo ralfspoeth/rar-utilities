@@ -17,6 +17,7 @@
  */
 package de.spoeth.rar.cci;
 
+import de.spoeth.rar.ci.AbstractConnectionFactory;
 import javax.resource.NotSupportedException;
 import javax.resource.Referenceable;
 import javax.resource.ResourceException;
@@ -27,13 +28,15 @@ import javax.resource.cci.RecordFactory;
 /**
  * This class provides a default implementation 
  * for the base interface {@link Referenceable} 
- * of {@link ConnectionFactory}
+ * of {@link ConnectionFactory}.
  * 
+ * It builds upon the non-CCI version {@link AbstractConnectionFactory}
+ * because of their similarity.
  * 
  * @author Ralf Spöth
  * @version 1.0
  */
-public abstract class AbstractConnectionFactory extends de.spoeth.rar.ci.AbstractConnectionFactory implements ConnectionFactory {
+public abstract class AbstractCCIConnectionFactory extends AbstractConnectionFactory implements ConnectionFactory {
     
     /**
      * Calls {@link #getConnection(javax.resource.cci.ConnectionSpec)}
@@ -52,6 +55,7 @@ public abstract class AbstractConnectionFactory extends de.spoeth.rar.ci.Abstrac
      * indicating that the optional features of a record factory
      * are not supported.
      * 
+     * @return override to implement this feature; returns nothing
      * @throws ResourceException always; an instance of {@link NotSupportedException}s
      */
     @Override

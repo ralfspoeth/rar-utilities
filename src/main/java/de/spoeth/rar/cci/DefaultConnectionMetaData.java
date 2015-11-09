@@ -23,7 +23,7 @@ import javax.resource.cci.ConnectionMetaData;
 /**
  * This class provides a canonical
  * implementation of the interface
- * {@link ConnectionMetaData}; with four final fields for the
+ * {@link ConnectionMetaData}; with three final fields for the
  * required meta data properties.
  * 
  * @author Ralf Spöth

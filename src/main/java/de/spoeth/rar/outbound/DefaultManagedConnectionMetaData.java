@@ -18,12 +18,14 @@
 package de.spoeth.rar.outbound;
 
 import de.spoeth.rar.cci.DefaultConnectionMetaData;
-import javax.resource.ResourceException;
 import javax.resource.spi.ManagedConnectionMetaData;
 
 /**
- *
- * @author SPR
+ * This class builds upon {@link DefaultConnectionMetaData} and just
+ * adds the property {@link #maxConnections} to the inherited properties.
+ * 
+ * @author Ralf Spöth
+ * @version 1.0
  */
 public class DefaultManagedConnectionMetaData extends DefaultConnectionMetaData implements ManagedConnectionMetaData {
 
@@ -35,8 +37,7 @@ public class DefaultManagedConnectionMetaData extends DefaultConnectionMetaData 
     private final int maxConnections;
     
     @Override
-    public int getMaxConnections() throws ResourceException {
+    public int getMaxConnections() {
         return maxConnections;
-    }
-    
+    }    
 }

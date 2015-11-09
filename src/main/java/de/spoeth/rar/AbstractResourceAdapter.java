@@ -20,72 +20,66 @@ package de.spoeth.rar;
 import java.io.Serializable;
 import javax.resource.spi.ActivationSpec;
 import javax.resource.spi.BootstrapContext;
-import javax.resource.spi.ConfigProperty;
 import javax.resource.spi.Connector;
 import javax.resource.spi.ResourceAdapter;
 import javax.transaction.xa.XAResource;
 
 /**
- * This class may be useful for the development of resource
- * adapters by abstractly implementing the {@link ResourceAdapter} 
- * and, in order to comply with the JavaBeans specification, 
- * {@link Serializable}.
- * 
- * The application server instantiates a single instance 
- * of this class and calls the method
- * {@link #start(javax.resource.spi.BootstrapContext)} afterwards.
- * The server invokes {@link #stop()} upon un-deployment of the resource
- * adapter and before it shuts down.
- * 
- * You may define JavaBeans properties and annotate them
- * with the {@link ConfigProperty} annotation in order to
- * to provide the chance to configure the resource adapter 
- * before deployment. This implementation provides a default
- * property {@link #mode}.
- * 
- * Do not forget to add the {@link Connector} annotation with your 
+ * This class may be useful for the development of resource adapters by
+ * abstractly implementing the {@link ResourceAdapter} and, in order to comply
+ * with the JavaBeans specification, {@link Serializable}.
+ *
+ * The application server instantiates a single instance of this class and calls
+ * the method {@link #start(javax.resource.spi.BootstrapContext)} afterwards.
+ * The server invokes {@link #stop()} upon un-deployment of the resource adapter
+ * and before it shuts down.
+ *
+ * You may define JavaBeans properties and annotate them with the
+ * {@link javax.resource.spi.ConfigProperty} annotation in order 
+ * to to provide the chance to
+ * configure the resource adapter before deployment.
+ *
+ * Do not forget to add the {@link Connector} annotation with your
  * implementation. Furthermore, add an implementation for both
  * {@link #equals(java.lang.Object)} and {@link #hashCode() }.
- * 
+ *
  * @author Ralf Spöth
  * @version 1.0
  */
 public abstract class AbstractResourceAdapter implements ResourceAdapter, Serializable {
-    
+
     /**
-     * A reference to the {@link BootstrapContext context} 
-     * passed to the {@link #start(javax.resource.spi.BootstrapContext)} method;
+     * A reference to the {@link BootstrapContext context} passed to the
+     * {@link #start(javax.resource.spi.BootstrapContext)} method;
      * subclass-visible.
-     * 
-     * Note that this class does not provide get/set
-     * methods for the context.
+     *
+     * Note that this class does not provide get/set methods for the context.
      */
-    protected BootstrapContext context;
-    
+    protected transient BootstrapContext context;
+
     /**
      * Empty default implementation.
-     * 
-     * @param ctx
+     *
+     * @param ctx the bootstrap context
      */
     @Override
     public void start(BootstrapContext ctx) {
         this.context = ctx;
     }
-    
-    
+
     /**
      * Set {@link #context} to {@code null}.
      */
     @Override
-    public void stop() {        
+    public void stop() {
         this.context = null;
     }
-    
+
     /**
-     * Default implementation returns {@code null} as it assumes
-     * no support for XA transactions.
-     * 
-     * @param specs 
+     * Default implementation returns {@code null} as it assumes no support for
+     * XA transactions.
+     *
+     * @param specs array of activation specs
      * @return {@code null}
      */
     @Override
