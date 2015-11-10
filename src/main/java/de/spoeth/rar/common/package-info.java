@@ -15,17 +15,7 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package de.spoeth.rar.ci;
-
-import de.spoeth.rar.common.AbstractReferenceable;
-
 /**
- * This class serves as a skeletal class for
- * non-CCI connection factories.
- * 
- * @author Ralf Spöth
- * @version 1.0
+ * Classes commonly used in various packages.
  */
-public abstract class AbstractConnectionFactory extends AbstractReferenceable implements ConnectionFactory {
-
-}
+package de.spoeth.rar.common;

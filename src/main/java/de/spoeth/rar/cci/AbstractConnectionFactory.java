@@ -17,7 +17,7 @@
  */
 package de.spoeth.rar.cci;
 
-import de.spoeth.rar.ci.AbstractConnectionFactory;
+import de.spoeth.rar.common.AbstractReferenceable;
 import javax.resource.NotSupportedException;
 import javax.resource.Referenceable;
 import javax.resource.ResourceException;
@@ -36,7 +36,7 @@ import javax.resource.cci.RecordFactory;
  * @author Ralf Spöth
  * @version 1.0
  */
-public abstract class AbstractCCIConnectionFactory extends AbstractConnectionFactory implements ConnectionFactory {
+public abstract class AbstractConnectionFactory extends AbstractReferenceable implements ConnectionFactory {
     
     /**
      * Calls {@link #getConnection(javax.resource.cci.ConnectionSpec)}

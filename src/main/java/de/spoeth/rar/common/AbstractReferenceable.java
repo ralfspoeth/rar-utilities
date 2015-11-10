@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 SPR
+ * Copyright (C) 2015 SPR
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -15,25 +15,26 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package de.spoeth.rar.cci;
+package de.spoeth.rar.common;
 
-import de.spoeth.rar.ci.AbstractConnection;
-import java.io.Closeable;
-import javax.resource.cci.Connection;
+import javax.naming.Reference;
+import javax.resource.Referenceable;
 
 /**
- * This base class ensures that subclasses implement both 
- * the {@link Connection} and {@link AutoCloseable} interfaces;
- * the latter being optional. 
- * 
- * Implementing {@link Closeable} would have been sufficient; however, 
- * the {@link AutoCloseable} allows for try-with-resources idioms.
- * 
- * The class builds upon the non-CCI version due to their generic
- * similarity.
- * 
+ *
  * @author Ralf Spöth
  * @version 1.0
  */
-public abstract class AbstractCCIConnection extends AbstractConnection implements Connection {
+public class AbstractReferenceable implements Referenceable {
+    protected Reference ref;
+    
+    @Override
+    public void setReference(Reference rfrnc) {
+        this.ref = rfrnc;
+    }
+
+    @Override
+    public Reference getReference() {
+        return ref;
+    }    
 }
