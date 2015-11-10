@@ -18,10 +18,12 @@
 package de.spoeth.rar;
 
 import java.io.Serializable;
+import javax.resource.ResourceException;
 import javax.resource.spi.ActivationSpec;
 import javax.resource.spi.BootstrapContext;
 import javax.resource.spi.Connector;
 import javax.resource.spi.ResourceAdapter;
+import javax.resource.spi.ResourceAdapterInternalException;
 import javax.transaction.xa.XAResource;
 
 /**
@@ -61,9 +63,10 @@ public abstract class AbstractResourceAdapter implements ResourceAdapter, Serial
      * Empty default implementation.
      *
      * @param ctx the bootstrap context
+     * @throws javax.resource.spi.ResourceAdapterInternalException see {@link ResourceAdapter}
      */
     @Override
-    public void start(BootstrapContext ctx) {
+    public void start(BootstrapContext ctx) throws ResourceAdapterInternalException{
         this.context = ctx;
     }
 
@@ -81,9 +84,10 @@ public abstract class AbstractResourceAdapter implements ResourceAdapter, Serial
      *
      * @param specs array of activation specs
      * @return {@code null}
+     * @throws javax.resource.ResourceException never
      */
     @Override
-    public XAResource[] getXAResources(ActivationSpec[] specs) {
+    public XAResource[] getXAResources(ActivationSpec[] specs) throws ResourceException{
         return null;
     }
 }
