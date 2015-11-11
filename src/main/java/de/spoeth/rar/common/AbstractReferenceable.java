@@ -17,15 +17,18 @@
  */
 package de.spoeth.rar.common;
 
+import javax.naming.NamingException;
 import javax.naming.Reference;
 import javax.resource.Referenceable;
 
 /**
- *
+ * Abstract base class for {@link Referenceable} 
+ * implementations.
+ * 
  * @author Ralf Spöth
  * @version 1.0
  */
-public class AbstractReferenceable implements Referenceable {
+public abstract class AbstractReferenceable implements Referenceable {
     protected Reference ref;
     
     @Override
@@ -34,7 +37,7 @@ public class AbstractReferenceable implements Referenceable {
     }
 
     @Override
-    public Reference getReference() {
+    public Reference getReference() throws NamingException {
         return ref;
     }    
 }
