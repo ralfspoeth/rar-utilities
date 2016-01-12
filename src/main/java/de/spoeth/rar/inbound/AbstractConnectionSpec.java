@@ -41,6 +41,11 @@ import javax.resource.cci.ConnectionSpec;
  *
  * Do not forget to fire property changes.
  * 
+ * <p>
+ * Extending this class enforces compliance
+ * with the JCA spec.
+ * </p>
+ * 
  * @author Ralf Spöth
  * @version 1.0
  */
