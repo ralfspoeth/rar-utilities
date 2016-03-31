@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 SPR
+ * Copyright (C) 2014 Ralf Spöth
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -17,7 +17,15 @@
  */
 
 /**
- * Contains a basic implementation of a resource adapter plus 
- * a simplistic connection manager for use in non-managed environments.
+ * This root package of this library provides
+ * the common utility classes for the implementation of custom 
+ * resource adapters.
+ * 
+ * The purpose of this library it to make the development
+ * of JCA compliant resource adapters easier. 
+ * 
+ * 
+ * @author Ralf Spöth
+ * @version 1.0
  */
 package de.spoeth.rar;

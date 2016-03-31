@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 SPR
+ * Copyright (C) 2015 Ralf Spöth
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -18,9 +18,13 @@
 package de.spoeth.rar.ci;
 
 /**
- * Non-CCI connections should implement {@link AutoCloseable},
+ * Non-CCI connections should implement {@link AutoCloseable};
  * implementing this interface may help.
  * 
+ * <p>
+ * The interface should provide the business methods
+ * published through this resource adapter.
+ * </p>
  *
  * @author Ralf Spöth
  * @version 1.0

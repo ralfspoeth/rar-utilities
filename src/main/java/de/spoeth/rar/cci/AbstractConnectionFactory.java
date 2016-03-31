@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 SPR
+ * Copyright (C) 2014 Ralf Spöth
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -17,7 +17,7 @@
  */
 package de.spoeth.rar.cci;
 
-import de.spoeth.rar.common.AbstractReferenceable;
+import de.spoeth.rar.AbstractReferenceable;
 import javax.resource.NotSupportedException;
 import javax.resource.Referenceable;
 import javax.resource.ResourceException;

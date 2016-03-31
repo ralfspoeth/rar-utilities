@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 SPR
+ * Copyright (C) 2015 Ralf Spöth
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -15,7 +15,30 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
+package de.spoeth.rar;
+
+import javax.naming.NamingException;
+import javax.naming.Reference;
+import javax.resource.Referenceable;
+
 /**
- * Classes commonly used in various packages.
+ * Abstract base class for {@link Referenceable} 
+ * implementations.
+ * 
+ * @author Ralf Spöth
+ * @version 1.0
  */
-package de.spoeth.rar.common;
+public abstract class AbstractReferenceable implements Referenceable {
+    
+    private Reference ref;
+    
+    @Override
+    public void setReference(Reference rfrnc) {
+        this.ref = rfrnc;
+    }
+
+    @Override
+    public Reference getReference() throws NamingException {
+        return ref;
+    }    
+}

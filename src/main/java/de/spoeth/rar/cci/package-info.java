@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 SPR
+ * Copyright (C) 2014 Ralf Spöth
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -16,10 +16,34 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 /**
- * Contains two abstract implementations of the canonical
- * CCI classes {@link Connection} and 
- * {@link ConnectionFactory}.
+ * Contains helper implementations for the implementation
+ * of CCI compliance resource adapters.
+ * 
+ * <p>
+ * Let {@code XiXi} be the name of an imaginary CCI-compliant 
+ * resource adapter. We need to provide at least four types:
+ * </p>
+ * 
+ * <em>Interface</em>
+ * <ul>
+ * <li>{@code XiXiConn} which must extend {@link javax.resource.cci.Connection} 
+ * </li>
+ * <li>{@code XiXiConnFactory} which must extend 
+ *     {@link javax.resource.cci.ConnectionFactory}
+ * </li>
+ * </ul>
+ * 
+ * <em>Classes</em>
+ * <ul>
+ * <li>{@code XiXiConnImpl} which must implement {@code XiXiConn}
+ * </li>
+ * <li>{@code XiXiConnFactoryImpl} which must implement {@code XiXiConnFactory}
+ *      and may extend {@link AbstractConnectionFactory}.
+ * </li>
+ * </ul>
+ * 
+ * 
+ * @author Ralf Spöth
+ * @version 1.0
  */
 package de.spoeth.rar.cci;
-
-import javax.resource.cci.*;

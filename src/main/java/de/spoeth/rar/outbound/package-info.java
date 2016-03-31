@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 SPR
+ * Copyright (C) 2015 Ralf Spöth
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -19,5 +19,8 @@
 /**
  * Utility and base classes for the implementation of outbound
  * resource adapters.
+ * 
+ * @author Ralf Spöth
+ * @version 1.0
  */
 package de.spoeth.rar.outbound;
