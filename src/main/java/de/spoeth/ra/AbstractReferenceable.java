@@ -15,12 +15,30 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
+package de.spoeth.ra;
+
+import javax.naming.NamingException;
+import javax.naming.Reference;
+import javax.resource.Referenceable;
 
 /**
- * Utility and base classes for the implementation of outbound
- * resource adapters.
+ * Abstract base class for {@link Referenceable} 
+ * implementations.
  * 
  * @author Ralf Spöth
  * @version 1.0
  */
-package de.spoeth.rar.outbound;
+public abstract class AbstractReferenceable implements Referenceable {
+    
+    private Reference ref;
+    
+    @Override
+    public void setReference(Reference rfrnc) {
+        this.ref = rfrnc;
+    }
+
+    @Override
+    public Reference getReference() throws NamingException {
+        return ref;
+    }    
+}

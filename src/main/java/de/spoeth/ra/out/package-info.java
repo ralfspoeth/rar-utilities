@@ -17,10 +17,10 @@
  */
 
 /**
- * Utility and base classes for the implementation
- * of inbound resource adapters.
+ * Utility and base classes for the implementation of outbound
+ * resource adapters.
  * 
  * @author Ralf Spöth
  * @version 1.0
  */
-package de.spoeth.rar.inbound;
+package de.spoeth.ra.out;

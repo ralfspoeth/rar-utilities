@@ -15,9 +15,9 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package de.spoeth.rar.cci;
+package de.spoeth.ra.cci;
 
-import de.spoeth.rar.AbstractReferenceable;
+import de.spoeth.ra.AbstractReferenceable;
 import javax.resource.NotSupportedException;
 import javax.resource.Referenceable;
 import javax.resource.ResourceException;

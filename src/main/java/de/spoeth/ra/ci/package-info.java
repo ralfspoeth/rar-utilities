@@ -73,4 +73,4 @@
  * @author Ralf Spöth
  * @version 1.0
  */
-package de.spoeth.rar.ci;
+package de.spoeth.ra.ci;

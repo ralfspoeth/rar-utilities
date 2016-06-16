@@ -15,9 +15,9 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package de.spoeth.rar.outbound;
+package de.spoeth.ra.out;
 
-import de.spoeth.rar.DefaultConnectionManager;
+import de.spoeth.ra.DefaultConnectionManager;
 import java.io.PrintWriter;
 import java.util.Set;
 import javax.resource.NotSupportedException;

@@ -15,9 +15,9 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package de.spoeth.rar.ci;
+package de.spoeth.ra.ci;
 
-import de.spoeth.rar.AbstractReferenceable;
+import de.spoeth.ra.AbstractReferenceable;
 
 /**
  * This class serves as a skeletal class for

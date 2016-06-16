@@ -15,19 +15,12 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package de.spoeth.rar.ci;
 
 /**
- * Non-CCI connections should implement {@link AutoCloseable};
- * implementing this interface may help.
+ * Utility and base classes for the implementation
+ * of inbound resource adapters.
  * 
- * <p>
- * The interface should provide the business methods
- * published through this resource adapter.
- * </p>
- *
  * @author Ralf Spöth
  * @version 1.0
  */
-public interface Connection extends AutoCloseable {
-}
+package de.spoeth.ra.in;

@@ -15,9 +15,9 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package de.spoeth.rar.outbound;
+package de.spoeth.ra.out;
 
-import de.spoeth.rar.AbstractResourceAdapter;
+import de.spoeth.ra.AbstractResourceAdapter;
 import javax.resource.NotSupportedException;
 import javax.resource.ResourceException;
 import javax.resource.spi.ActivationSpec;

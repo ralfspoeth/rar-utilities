@@ -15,18 +15,29 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-package de.spoeth.rar.ci;
+package de.spoeth.ra.out;
 
-import java.io.Serializable;
-import javax.resource.Referenceable;
+import de.spoeth.ra.cci.DefaultConnectionMetaData;
+import javax.resource.spi.ManagedConnectionMetaData;
 
 /**
- * Implementing this interface ensures that non-CCI 
- * connection implementations fulfill the general contracts
- * for connection factories, which requires to implement
- * both {@link Serializable} and {@link Referenceable}.
- *
+ * This class builds upon {@link DefaultConnectionMetaData} and just
+ * adds the property {@link #maxConnections} to the inherited properties.
+ * 
  * @author Ralf Spöth
  * @version 1.0
  */
-public interface ConnectionFactory extends Serializable, Referenceable {}
+public class DefaultManagedConnectionMetaData extends DefaultConnectionMetaData implements ManagedConnectionMetaData {
+
+    public DefaultManagedConnectionMetaData(String eisProductName, String eisProductVersion, String userName, int maxConnections) {
+        super(eisProductName, eisProductVersion, userName);
+        this.maxConnections = maxConnections;
+    }
+    
+    private final int maxConnections;
+    
+    @Override
+    public int getMaxConnections() {
+        return maxConnections;
+    }    
+}
