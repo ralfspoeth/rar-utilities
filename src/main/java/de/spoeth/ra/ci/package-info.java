@@ -59,6 +59,7 @@
  * The client-side looks like this:
  * <pre>
  * public class Client {
+ * 
  *    {@code @Resource} YourConnFactory adapter;
  * 
  *     public void useIt() {

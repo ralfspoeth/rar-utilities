@@ -16,15 +16,15 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
 /**
- * Contains helper implementations for the implementation
+ * Contains helper classes for the implementation
  * of CCI compliance resource adapters.
  * 
  * <p>
  * Let {@code XiXi} be the name of an imaginary CCI-compliant 
- * resource adapter. We need to provide at least four types:
+ * resource adapter. We need to provide at least four classes:
  * </p>
  * 
- * <em>Interface</em>
+ * <em>Two Interfaces</em>
  * <ul>
  * <li>{@code XiXiConn} which must extend {@link javax.resource.cci.Connection} 
  * </li>
@@ -33,7 +33,7 @@
  * </li>
  * </ul>
  * 
- * <em>Classes</em>
+ * <em>Two Classes</em>
  * <ul>
  * <li>{@code XiXiConnImpl} which must implement {@code XiXiConn}
  * </li>
