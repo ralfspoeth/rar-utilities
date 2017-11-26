@@ -31,7 +31,7 @@ import javax.resource.spi.endpoint.MessageEndpointFactory;
  * @author Ralf Spöth
  * @version 1.0
  */
-public class DefaultOutboundResourceAdapter extends AbstractResourceAdapter {
+public abstract class AbstractOutboundResourceAdapter extends AbstractResourceAdapter {
 
     /**
      * Not implemented for outbound resource adapters.
