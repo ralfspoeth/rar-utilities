@@ -17,6 +17,8 @@
  */
 package de.spoeth.ra.ci;
 
+import javax.resource.ResourceException;
+
 /**
  * Non-CCI connections should implement {@link AutoCloseable};
  * implementing this interface may help.
@@ -30,4 +32,7 @@ package de.spoeth.ra.ci;
  * @version 1.0
  */
 public interface Connection extends AutoCloseable {
+
+    @Override
+    default void close() throws ResourceException{};    
 }
