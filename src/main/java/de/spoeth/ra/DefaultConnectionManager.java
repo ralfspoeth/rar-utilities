@@ -56,8 +56,8 @@ public class DefaultConnectionManager implements ConnectionManager {
      * @throws ResourceException rethrows mcfs exceptions
      */
     @Override
-    public Object allocateConnection(ManagedConnectionFactory mcf, ConnectionRequestInfo cxRequestInfo) throws ResourceException {
-        return mcf.createManagedConnection(null, cxRequestInfo); // todo
+    public Object allocateConnection(ManagedConnectionFactory mcf, ConnectionRequestInfo cxRequestInfo) throws ResourceException {        
+        return mcf.createManagedConnection(null, cxRequestInfo);
     }
     
 }
