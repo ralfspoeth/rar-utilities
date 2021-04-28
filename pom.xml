@@ -15,6 +15,12 @@
         <encoding>UTF-8</encoding>
     </properties>
 
+    <scm>
+        <connection>scm:git:https://github.com/ralfspoeth/rar-utilities.git</connection>
+        <developerConnection>scm:git:https://github.com/ralfspoeth/rar-utilities.git</developerConnection>
+        <url>https://github.com/ralfspoeth/rar-utilities.git</url>
+    </scm>
+
     <build>
         <plugins>
             <plugin>
@@ -26,6 +32,11 @@
                     <target>11</target>
                     <release>11</release>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>3.0.0-M4</version>
             </plugin>
         </plugins>
     </build>
