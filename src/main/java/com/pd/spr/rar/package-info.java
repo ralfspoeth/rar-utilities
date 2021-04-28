@@ -15,11 +15,9 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
-/**
- * Contains two abstract implementations of the canonical
- * CCI classes {@link Connection} and 
- * {@link ConnectionFactory}.
- */
-package de.spoeth.rar.cci;
 
-import javax.resource.cci.*;
+/**
+ * Contains a basic implementation of a resource adapter plus
+ * a simplistic connection manager for use in non-managed environments.
+ */
+package com.pd.spr.rar;

@@ -15,9 +15,26 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  */
+package com.pd.spr.rar.cci;
+
+import com.pd.spr.rar.ci.AbstractConnection;
+
+import javax.resource.cci.Connection;
+import java.io.Closeable;
 
 /**
- * Contains a basic implementation of a resource adapter plus 
- * a simplistic connection manager for use in non-managed environments.
+ * This base class ensures that subclasses implement both
+ * the {@link Connection} and {@link AutoCloseable} interfaces;
+ * the latter being optional.
+ * <p>
+ * Implementing {@link Closeable} would have been sufficient; however,
+ * the {@link AutoCloseable} allows for try-with-resources idioms.
+ * <p>
+ * The class builds upon the non-CCI version due to their generic
+ * similarity.
+ *
+ * @author Ralf Spöth
+ * @version 1.0
  */
-package de.spoeth.rar;
+public abstract class AbstractCCIConnection extends AbstractConnection implements Connection {
+}
