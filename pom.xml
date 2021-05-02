@@ -3,7 +3,7 @@
 
     <groupId>com.pd.spr</groupId>
     <artifactId>rar-utilities</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>rar-utilities</name>
@@ -18,7 +18,7 @@
         <connection>scm:git:https://github.com/ralfspoeth/rar-utilities.git</connection>
         <developerConnection>scm:git:file://localhost/C:/java/projects/rar-utilities</developerConnection>
         <url>https://github.com/ralfspoeth/rar-utilities.git</url>
-      <tag>v1.0</tag>
+      <tag>rar-utilities-1.0.1</tag>
   </scm>
 
     <build>
