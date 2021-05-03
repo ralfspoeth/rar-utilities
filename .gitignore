@@ -6,3 +6,4 @@ target
 *.iml
 .idea
 nb-configuration.xml
+*release*

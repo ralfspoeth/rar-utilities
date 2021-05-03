@@ -16,7 +16,7 @@
 
     <scm>
         <connection>scm:git:https://github.com/ralfspoeth/rar-utilities.git</connection>
-        <developerConnection>scm:git:file:///java/projects/rar-utilities</developerConnection>
+        <developerConnection>scm:git:file:///java/projects/rar-utilities.git</developerConnection>
         <url>https://github.com/ralfspoeth/rar-utilities.git</url>
       <tag>rar-utilities-1.0.1</tag>
   </scm>
