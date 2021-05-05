@@ -1,4 +1,4 @@
-# rar-utilities   1.0-SNAPSHOT
+# rar-utilities
 
 ## Introduction
 
