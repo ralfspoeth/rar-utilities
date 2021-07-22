@@ -1,4 +1,4 @@
-Copyright (c) 2013, holisticon AG
+Copyright (c) 2021, Ralf J. Spöth
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
