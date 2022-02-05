@@ -17,9 +17,7 @@
  */
 package com.pd.spr.rar.inbound;
 
-import javax.resource.cci.ConnectionSpec;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeSupport;
+import jakarta.resource.cci.ConnectionSpec;
 import java.io.Serializable;
 
 /**
@@ -45,21 +43,4 @@ import java.io.Serializable;
  * @version 1.0
  */
 public abstract class AbstractConnectionSpec implements ConnectionSpec, Serializable {
-    protected final PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
-
-    public void addPropertyChangeListener(PropertyChangeListener listener) {
-        changeSupport.addPropertyChangeListener(listener);
-    }
-
-    public void removePropertyChangeListener(PropertyChangeListener listener) {
-        changeSupport.removePropertyChangeListener(listener);
-    }
-
-    public void addPropertyChangeListener(String propertyName, PropertyChangeListener listener) {
-        changeSupport.addPropertyChangeListener(propertyName, listener);
-    }
-
-    public void removePropertyChangeListener(String propertyName, PropertyChangeListener listener) {
-        changeSupport.removePropertyChangeListener(propertyName, listener);
-    }
 }

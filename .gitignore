@@ -5,5 +5,4 @@ target
 .classpath
 *.iml
 .idea
-nb-configuration.xml
 *release*

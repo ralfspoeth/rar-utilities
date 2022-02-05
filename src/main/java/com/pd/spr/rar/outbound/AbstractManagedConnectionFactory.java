@@ -19,9 +19,9 @@ package com.pd.spr.rar.outbound;
 
 import com.pd.spr.rar.DefaultConnectionManager;
 
-import javax.resource.NotSupportedException;
-import javax.resource.ResourceException;
-import javax.resource.spi.*;
+import jakarta.resource.NotSupportedException;
+import jakarta.resource.ResourceException;
+import jakarta.resource.spi.*;
 import javax.security.auth.Subject;
 import java.io.PrintWriter;
 import java.util.Set;
@@ -33,7 +33,7 @@ import java.util.Set;
  * It uses the {@link DefaultConnectionManager} in non-managed environments.
  * <p>
  * Resource adapter implementations must implement the methods
- * {@link ManagedConnectionFactory#createConnectionFactory(javax.resource.spi.ConnectionManager)} and
+ * {@link ManagedConnectionFactory#createConnectionFactory(jakarta.resource.spi.ConnectionManager)} and
  * {@link #createManagedConnection(Subject, ConnectionRequestInfo)}, the former
  * providing an instance of the client-level connection factory and the
  * latter providing an instance of the physical managed connection.
@@ -76,7 +76,7 @@ public abstract class AbstractManagedConnectionFactory implements
      * shipped with this library; see {@link DefaultConnectionManager}.
      *
      * @return a new connection
-     * @throws ResourceException see {@link #createConnectionFactory(javax.resource.spi.ConnectionManager)}
+     * @throws ResourceException see {@link #createConnectionFactory(jakarta.resource.spi.ConnectionManager)}
      */
     @Override
     public Object createConnectionFactory() throws ResourceException {

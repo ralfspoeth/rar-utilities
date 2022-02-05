@@ -17,7 +17,7 @@
  */
 package com.pd.spr.rar.ci;
 
-import javax.resource.Referenceable;
+import jakarta.resource.Referenceable;
 import java.io.Serializable;
 
 /**

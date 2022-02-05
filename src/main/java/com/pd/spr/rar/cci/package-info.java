@@ -18,8 +18,8 @@
 
 /**
  * Contains two abstract implementations of the canonical
- * CCI classes {@link javax.resource.cci.Connection} and
- * {@link javax.resource.cci.ConnectionFactory}.
+ * CCI classes {@link jakarta.resource.cci.Connection} and
+ * {@link jakarta.resource.cci.ConnectionFactory}.
  */
 package com.pd.spr.rar.cci;
 

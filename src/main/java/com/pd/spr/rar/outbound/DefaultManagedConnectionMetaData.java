@@ -19,7 +19,7 @@ package com.pd.spr.rar.outbound;
 
 import com.pd.spr.rar.cci.DefaultConnectionMetaData;
 
-import javax.resource.spi.ManagedConnectionMetaData;
+import jakarta.resource.spi.ManagedConnectionMetaData;
 
 /**
  * This class builds upon {@link DefaultConnectionMetaData} and just

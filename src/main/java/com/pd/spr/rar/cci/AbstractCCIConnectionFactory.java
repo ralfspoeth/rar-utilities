@@ -19,12 +19,12 @@ package com.pd.spr.rar.cci;
 
 import com.pd.spr.rar.ci.AbstractConnectionFactory;
 
-import javax.resource.NotSupportedException;
-import javax.resource.Referenceable;
-import javax.resource.ResourceException;
-import javax.resource.cci.Connection;
-import javax.resource.cci.ConnectionFactory;
-import javax.resource.cci.RecordFactory;
+import jakarta.resource.NotSupportedException;
+import jakarta.resource.Referenceable;
+import jakarta.resource.ResourceException;
+import jakarta.resource.cci.Connection;
+import jakarta.resource.cci.ConnectionFactory;
+import jakarta.resource.cci.RecordFactory;
 
 /**
  * This class provides a default implementation
@@ -40,7 +40,7 @@ import javax.resource.cci.RecordFactory;
 public abstract class AbstractCCIConnectionFactory extends AbstractConnectionFactory implements ConnectionFactory {
 
     /**
-     * Calls {@link #getConnection(javax.resource.cci.ConnectionSpec)}
+     * Calls {@link #getConnection(jakarta.resource.cci.ConnectionSpec)}
      * with {@code null} as spec parameter.
      *
      * @return connection instance

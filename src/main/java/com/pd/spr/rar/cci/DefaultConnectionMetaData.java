@@ -17,7 +17,7 @@
  */
 package com.pd.spr.rar.cci;
 
-import javax.resource.cci.ConnectionMetaData;
+import jakarta.resource.cci.ConnectionMetaData;
 import java.util.Objects;
 
 /**

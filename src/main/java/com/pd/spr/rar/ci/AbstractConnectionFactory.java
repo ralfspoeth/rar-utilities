@@ -18,7 +18,7 @@
 package com.pd.spr.rar.ci;
 
 import javax.naming.Reference;
-import javax.resource.Referenceable;
+import jakarta.resource.Referenceable;
 
 /**
  * This class serves as a skeletal class for

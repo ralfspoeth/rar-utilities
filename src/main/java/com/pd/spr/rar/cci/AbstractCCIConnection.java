@@ -19,7 +19,7 @@ package com.pd.spr.rar.cci;
 
 import com.pd.spr.rar.ci.AbstractConnection;
 
-import javax.resource.cci.Connection;
+import jakarta.resource.cci.Connection;
 import java.io.Closeable;
 
 /**

@@ -17,10 +17,10 @@
  */
 package com.pd.spr.rar;
 
-import javax.resource.spi.ActivationSpec;
-import javax.resource.spi.BootstrapContext;
-import javax.resource.spi.Connector;
-import javax.resource.spi.ResourceAdapter;
+import jakarta.resource.spi.ActivationSpec;
+import jakarta.resource.spi.BootstrapContext;
+import jakarta.resource.spi.Connector;
+import jakarta.resource.spi.ResourceAdapter;
 import javax.transaction.xa.XAResource;
 import java.io.Serializable;
 
@@ -30,12 +30,12 @@ import java.io.Serializable;
  * with the JavaBeans specification, {@link Serializable}.
  * <p>
  * The application server instantiates a single instance of this class and calls
- * the method {@link #start(javax.resource.spi.BootstrapContext)} afterwards.
+ * the method {@link #start(jakarta.resource.spi.BootstrapContext)} afterwards.
  * The server invokes {@link #stop()} upon un-deployment of the resource adapter
  * and before it shuts down.
  * <p>
  * You may define JavaBeans properties and annotate them with the
- * {@link javax.resource.spi.ConfigProperty} annotation in order
+ * {@link jakarta.resource.spi.ConfigProperty} annotation in order
  * to to provide the chance to
  * configure the resource adapter before deployment.
  * <p>
@@ -50,7 +50,7 @@ public abstract class AbstractResourceAdapter implements ResourceAdapter, Serial
 
     /**
      * A reference to the {@link BootstrapContext context} passed to the
-     * {@link #start(javax.resource.spi.BootstrapContext)} method;
+     * {@link #start(jakarta.resource.spi.BootstrapContext)} method;
      * subclass-visible.
      * <p>
      * Note that this class does not provide get/set methods for the context.

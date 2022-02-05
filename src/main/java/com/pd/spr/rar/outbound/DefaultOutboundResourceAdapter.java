@@ -19,11 +19,11 @@ package com.pd.spr.rar.outbound;
 
 import com.pd.spr.rar.AbstractResourceAdapter;
 
-import javax.resource.NotSupportedException;
-import javax.resource.ResourceException;
-import javax.resource.spi.ActivationSpec;
-import javax.resource.spi.ResourceAdapter;
-import javax.resource.spi.endpoint.MessageEndpointFactory;
+import jakarta.resource.NotSupportedException;
+import jakarta.resource.ResourceException;
+import jakarta.resource.spi.ActivationSpec;
+import jakarta.resource.spi.ResourceAdapter;
+import jakarta.resource.spi.endpoint.MessageEndpointFactory;
 
 /**
  * Default implementation of the {@link ResourceAdapter} interface
@@ -39,7 +39,7 @@ public class DefaultOutboundResourceAdapter extends AbstractResourceAdapter {
      *
      * @param endpointFactory the endpoint factory
      * @param spec            the activation spec
-     * @throws javax.resource.NotSupportedException always
+     * @throws jakarta.resource.NotSupportedException always
      */
     @Override
     public void endpointActivation(MessageEndpointFactory endpointFactory, ActivationSpec spec) throws ResourceException {
@@ -49,7 +49,7 @@ public class DefaultOutboundResourceAdapter extends AbstractResourceAdapter {
     /**
      * Empty implementation (does nothing).
      * <p>
-     * {@link ResourceAdapter#endpointDeactivation(javax.resource.spi.endpoint.MessageEndpointFactory, javax.resource.spi.ActivationSpec)}
+     * {@link ResourceAdapter#endpointDeactivation(jakarta.resource.spi.endpoint.MessageEndpointFactory, jakarta.resource.spi.ActivationSpec)}
      * does not throw a {@link ResourceException}, so we may unfortunately not
      * throw a {@link NotSupportedException} instead.
      *
