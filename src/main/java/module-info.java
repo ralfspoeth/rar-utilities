@@ -1,4 +1,4 @@
-open module com.pd.spr.rar.utilities {
+module io.github.ralfspoeth.raru {
     requires java.naming;
     requires jakarta.resource;
     requires java.transaction.xa;
