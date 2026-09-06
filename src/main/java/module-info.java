@@ -1,10 +1,10 @@
 open module com.pd.spr.rar.utilities {
     requires java.naming;
-    requires jakarta.jakartaee.api;
+    requires jakarta.resource;
     requires java.transaction.xa;
-    exports com.pd.spr.rar.cci;
-    exports com.pd.spr.rar.ci;
-    exports com.pd.spr.rar.outbound;
-    exports com.pd.spr.rar.inbound;
-    exports com.pd.spr.rar;
+    exports io.github.ralfspoeth.raru.cci;
+    exports io.github.ralfspoeth.raru.ci;
+    exports io.github.ralfspoeth.raru.outbound;
+    exports io.github.ralfspoeth.raru.inbound;
+    exports io.github.ralfspoeth.raru;
 }
