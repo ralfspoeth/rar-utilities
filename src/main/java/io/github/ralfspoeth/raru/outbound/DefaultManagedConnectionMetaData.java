@@ -1,27 +1,33 @@
 package io.github.ralfspoeth.raru.outbound;
 
-import io.github.ralfspoeth.raru.cci.DefaultConnectionMetaData;
-
+import jakarta.resource.ResourceException;
+import jakarta.resource.cci.ConnectionMetaData;
 import jakarta.resource.spi.ManagedConnectionMetaData;
 
 /**
- * This class builds upon {@link DefaultConnectionMetaData} and just
- * adds the property {@link #maxConnections} to the inherited properties.
- *
- * @author Ralf Spöth
- * @version 1.0
+ * A record representing {@link DefaultManagedConnectionMetaData} objects.
  */
-public class DefaultManagedConnectionMetaData extends DefaultConnectionMetaData implements ManagedConnectionMetaData {
+public record DefaultManagedConnectionMetaData(ConnectionMetaData connectionMetaData, int maxConnections)
+        implements ManagedConnectionMetaData
+{
 
-    public DefaultManagedConnectionMetaData(String eisProductName, String eisProductVersion, String userName, int maxConnections) {
-        super(eisProductName, eisProductVersion, userName);
-        this.maxConnections = maxConnections;
+    @Override
+    public String getEISProductName() throws ResourceException {
+        return connectionMetaData.getEISProductName();
     }
 
-    private final int maxConnections;
+    @Override
+    public String getEISProductVersion() throws ResourceException {
+        return connectionMetaData.getEISProductVersion();
+    }
 
     @Override
     public int getMaxConnections() {
         return maxConnections;
+    }
+
+    @Override
+    public String getUserName() throws ResourceException {
+        return connectionMetaData.getUserName();
     }
 }

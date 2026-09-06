@@ -1,7 +1,5 @@
 package io.github.ralfspoeth.raru.cci;
 
-import io.github.ralfspoeth.raru.ci.AbstractConnection;
-
 import jakarta.resource.cci.Connection;
 import java.io.Closeable;
 
@@ -19,5 +17,5 @@ import java.io.Closeable;
  * @author Ralf Spöth
  * @version 1.0
  */
-public abstract class AbstractCCIConnection extends AbstractConnection implements Connection {
+public abstract class AbstractCCIConnection implements Connection, AutoCloseable {
 }

@@ -1,7 +1,6 @@
 package io.github.ralfspoeth.raru.ci;
 
 import javax.naming.Reference;
-import jakarta.resource.Referenceable;
 
 /**
  * This class serves as a skeletal class for
@@ -10,7 +9,7 @@ import jakarta.resource.Referenceable;
  * @author Ralf Spöth
  * @version 1.0
  */
-public abstract class AbstractConnectionFactory implements ConnectionFactory, Referenceable {
+public abstract class AbstractConnectionFactory implements ConnectionFactory {
 
     protected Reference ref;
 
