@@ -2,7 +2,6 @@ package io.github.ralfspoeth.raru.outbound;
 
 import io.github.ralfspoeth.raru.DefaultConnectionManager;
 
-import jakarta.resource.NotSupportedException;
 import jakarta.resource.ResourceException;
 import jakarta.resource.spi.*;
 import javax.security.auth.Subject;
@@ -21,12 +20,16 @@ import java.util.Set;
  * providing an instance of the client-level connection factory and the
  * latter providing an instance of the physical managed connection.
  * <p>
- * This implementation does not support connection matching.
+ * This implementation does not implement connection matching; see
+ * {@link #matchManagedConnections(Set, Subject, ConnectionRequestInfo)}.
  * <p>
  * The actual implementation should use the {@link ConnectionDefinition}
  * annotation. It should furthermore comply with the JavaBeans
  * specification (No-arg constructor, properties with getters and setters,
- * must be serializable which it already is).
+ * must be serializable, which it already is through
+ * {@link ManagedConnectionFactory}). Keep any field that is not itself
+ * serializable {@code transient}, as this class does for its log writer and
+ * its resource adapter.
  * <p>
  * Remember to implement both {@link #equals(java.lang.Object)} and
  * {@link #hashCode()}.
@@ -37,21 +40,36 @@ import java.util.Set;
 public abstract class AbstractManagedConnectionFactory implements
         ManagedConnectionFactory, ResourceAdapterAssociation {
 
+    @java.io.Serial
+    private static final long serialVersionUID = 1L;
+
     /**
-     * Feature is not supported; throws a {@link NotSupportedException}.
+     * Returns {@code null}, meaning that none of the candidates in
+     * {@code connectionSet} is an acceptable match and the caller should create a
+     * new connection instead.
+     * <p>
+     * {@code null} is what the contract of
+     * {@link ManagedConnectionFactory#matchManagedConnections(Set, Subject, ConnectionRequestInfo)}
+     * prescribes for the no-match case. Throwing instead would turn an ordinary
+     * pool miss into a failure in every pooling container.
+     * <p>
+     * Subclasses whose connections should be reused by the container's pool must
+     * override this method: pick the candidates you recognise out of
+     * {@code connectionSet} and compare them against {@code subject} and
+     * {@code cxRequestInfo}.
      *
-     * @param connectionSet recent connections
+     * @param connectionSet the candidate connections
      * @param subject       the security subject
      * @param cxRequestInfo request information
-     * @return nothing; always throws an exception
-     * @throws NotSupportedException always; feature is not implemented
+     * @return {@code null}, always, unless overridden
+     * @throws ResourceException never thrown here; declared for the benefit of overriding subclasses
      */
     @Override
     public ManagedConnection matchManagedConnections(
             Set connectionSet, Subject subject,
             ConnectionRequestInfo cxRequestInfo)
             throws ResourceException {
-        throw new NotSupportedException();
+        return null;
     }
 
     /**
@@ -66,7 +84,12 @@ public abstract class AbstractManagedConnectionFactory implements
         return createConnectionFactory(DefaultConnectionManager.getInstance());
     }
 
-    protected PrintWriter logWriter;
+    /**
+     * Not part of the serializable state: a {@link PrintWriter} is not
+     * serializable, and the container hands a fresh one to a deserialized
+     * factory through {@link #setLogWriter(PrintWriter)}.
+     */
+    protected transient PrintWriter logWriter;
 
     @Override
     public void setLogWriter(PrintWriter out) {
@@ -78,7 +101,12 @@ public abstract class AbstractManagedConnectionFactory implements
         return logWriter;
     }
 
-    protected ResourceAdapter ra;
+    /**
+     * Not part of the serializable state: the association with the resource
+     * adapter is re-established by the container after deserialization through
+     * {@link #setResourceAdapter(ResourceAdapter)}.
+     */
+    protected transient ResourceAdapter ra;
 
     @Override
     public ResourceAdapter getResourceAdapter() {

@@ -5,6 +5,5 @@ module io.github.ralfspoeth.raru {
     exports io.github.ralfspoeth.raru.cci;
     exports io.github.ralfspoeth.raru.ci;
     exports io.github.ralfspoeth.raru.outbound;
-    exports io.github.ralfspoeth.raru.inbound;
     exports io.github.ralfspoeth.raru;
 }

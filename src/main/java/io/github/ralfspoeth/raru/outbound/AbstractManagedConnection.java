@@ -4,7 +4,6 @@ import jakarta.resource.spi.ConnectionEvent;
 import jakarta.resource.spi.ConnectionEventListener;
 import jakarta.resource.spi.ManagedConnection;
 import java.io.PrintWriter;
-import java.io.Serializable;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -16,18 +15,23 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * to the EIS, this object should provide all the business methods
  * that you want to make available to EJBs.
  * <p>
- * This abstract class already implements {@link Serializable}, making
- * any subclass serializable. This is a requirement for implementations
- * of {@link ManagedConnection}s.
+ * Note that {@link ManagedConnection} does <em>not</em> extend
+ * {@link java.io.Serializable} and implementations are not required to be
+ * serializable; a managed connection wraps a live physical connection, which
+ * cannot meaningfully be written to a stream. Earlier versions of this class
+ * declared {@code Serializable} anyway, which was both unnecessary and
+ * unimplementable.
  * <p>
- * The managed connection and the application-level connection handle
- * are assumed to be associated with each other. The container is
- * allowed to
+ * The managed connection and the application-level connection handle are
+ * assumed to be associated with each other; the container may re-associate a
+ * handle with a different managed connection through
+ * {@link #associateConnection(Object)}, and may dissociate it again through
+ * {@link #cleanup()}.
  *
  * @author Ralf Spöth
  * @version 1.0
  */
-public abstract class AbstractManagedConnection<T> implements ManagedConnection, Serializable {
+public abstract class AbstractManagedConnection<T> implements ManagedConnection {
 
     protected T connection;
 

@@ -31,6 +31,9 @@ import java.io.Serializable;
  */
 public abstract class AbstractResourceAdapter implements ResourceAdapter, Serializable {
 
+    @java.io.Serial
+    private static final long serialVersionUID = 1L;
+
     /**
      * A reference to the {@link BootstrapContext context} passed to the
      * {@link #start(jakarta.resource.spi.BootstrapContext)} method;
