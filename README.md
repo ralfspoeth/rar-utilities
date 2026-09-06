@@ -10,7 +10,7 @@ adapter has to provide but nobody enjoys writing twice.
 > This repository is archived and will receive no further releases or fixes.
 > The final state builds against Jakarta EE 11 on Java 25, and the
 > specification deviations that would have broken a real adapter have been
-> corrected. What remains is listed under [Known issues](#known-issues).
+> corrected. See [Caveats](#caveats) for what to know before reusing it.
 
 ## Why it was archived
 
@@ -40,14 +40,19 @@ moved on:
 | `…raru.outbound`            | `AbstractManagedConnection<T>` (listener registration and `ConnectionEvent` dispatch), `AbstractManagedConnectionFactory`, `DefaultOutboundResourceAdapter`, `DefaultManagedConnectionMetaData`    |
 | `…raru.cci`                 | `AbstractCCIConnection`, `AbstractCCIConnectionFactory`, `DefaultConnectionMetaData`                                                                                                               |
 | `…raru.ci`                  | `ConnectionFactory` and `AbstractConnectionFactory` for non-CCI adapters                                                                                                                           |
-| `…raru.inbound`             | Empty; a placeholder should support for inbound adapters ever be added                                                                                                                             |
+| `…raru.inbound`             | Empty; a placeholder in case support for inbound adapters is ever added                                                                                                                             |
 
-## Known issues
+## Caveats
 
-The repository is a snapshot, not a product, and it carries **no tests** —
-nothing here has been exercised against a running container.
+The repository is a snapshot, not a product. It carries **no tests**: nothing
+here has been exercised against a running container, and the guarantee behind
+the final state is only that it compiles and that the contracts below were read
+carefully.
 
-The defects found during the final review have been fixed:
+## Fixed in the final revision
+
+These defects were present in every earlier version, including the tagged
+`1.0.2`. Anyone working from an older copy should treat them as live:
 
 - `DefaultConnectionManager.allocateConnection` returns an application-level
   connection handle rather than the `ManagedConnection` itself, and destroys
